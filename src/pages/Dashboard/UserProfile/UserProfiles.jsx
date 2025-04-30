@@ -1,5 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
+import {
+  FaStar
+} from "react-icons/fa";
 import { MdOutlineModeEdit } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
@@ -204,6 +207,71 @@ const UserProfiles = () => {
 
   return (
     <div className="bg-white p-5 lg:p-6">
+      <div
+        className="relative h-[350px] bg-cover bg-center rounded-2xl overflow-hidden shadow-xl"
+        style={{
+          backgroundImage: `url(${user?.photoURL || "https://i.imgur.com/8Km9tLL.png"
+            })`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-40"></div>
+
+      </div>
+
+      <div className="px-6 -mt-20 mb-8">
+        <div className="flex flex-col md:flex-row items-center gap-6 text-gray-900">
+          <div className="relative flex-shrink-0">
+            <div className="w-32 h-32 rounded-full border-4 border-white bg-gray-200 overflow-hidden shadow-lg">
+              <img
+                src={
+                  user?.photoURL ||
+                  "https://img.freepik.com/premium-vector/flat-businessman-character_33040-132.jpg?ga=GA1.1.960511258.1740671009&semt=ais_hybrid&w=740"
+                }
+                alt="Profile picture"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.src =
+                    "https://img.freepik.com/premium-vector/flat-businessman-character_33040-132.jpg?ga=GA1.1.960511258.1740671009&semt=ais_hybrid&w=740";
+                }}
+              />
+            </div>
+          </div>
+
+          <div className="lg:text-left text-center w-full">
+            <h1 className="text-3xl font-bold text-gray-900">
+              {user?.displayName || "No name"}
+            </h1>
+            <p className="text-gray-600 mt-2">
+              Email: {user?.email || "No email"}
+              {user?.location && <span> • Location: {user.location}</span>}
+              {user?.memberSince && <span> • Member Since: {user.memberSince}</span>}
+            </p>
+
+            <div className="mt-6 space-y-4">
+              <div className="flex items-center gap-4 flex-wrap">
+                <button
+                  className="px-4 py-2 text-sm border rounded-full font-semibold border-gray-300 bg-white text-gray-800 hover:bg-gray-100 shadow-md"
+                >
+                  Edit Profile
+                </button>
+                {user?.role && (
+                  <span className="text-xs font-semibold px-4 py-1 rounded-full capitalize bg-green-600 text-white">
+                    {user.role}
+                  </span>
+                )}
+              </div>
+
+              <div className="flex items-center gap-2">
+                <FaStar className="text-yellow-400" />
+                <span className="text-sm">4.5 Buyer Rating</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <h3 className="mb-5 text-lg font-semibold text-gray-800 dark:text-white/90 lg:mb-7">
         Profile
       </h3>
@@ -211,7 +279,7 @@ const UserProfiles = () => {
         {sections.map((section) => (
           <div
             key={section.id}
-            className="p-5 border border-base-300 rounded-2xl bg-base-100"
+            className="p-5 overflow-x-auto rounded-lg border border-gray-300 shadow-sm bg-white "
           >
             <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
               <div>

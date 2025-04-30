@@ -21,17 +21,6 @@ const HomeAdmin = () => {
   // }, [userEmail, axiosPublic]);
 
   return (
-<<<<<<< HEAD
-=======
-    <div className='py-6 mt-4 '>
-   <Stat></Stat>
-   <Charts></Charts>
-   <div className='mt-12 md:grid gap-8 space-y-6 grid-cols-6 '>
-   
-<div className='col-span-2'>
-<ProductData></ProductData>
-</div>
->>>>>>> 1ca3c1b9647562d11f0343812b100134eed51d2d
 
     <div className='p-6 mt-4'>
 

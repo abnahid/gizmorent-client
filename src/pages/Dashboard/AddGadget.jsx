@@ -4,15 +4,12 @@ import { FaPlus } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import Swal from "sweetalert";
 import useAdmin from "../../Hooks/useAdmin";
-<<<<<<< HEAD
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import useCategory from "../../Hooks/useCategory";
 import useRenter from "../../Hooks/useRenter";
 import useUser from "../../Hooks/useUser";
 import Header from "../../Shared/Header";
 import { uploadImage } from "../../utility/utility";
-=======
-import useCategory from "../../Hooks/useCategory";
->>>>>>> 1ca3c1b9647562d11f0343812b100134eed51d2d
 
 const AddGadget = () => {
   const axiosPubic = useAxiosPublic();
