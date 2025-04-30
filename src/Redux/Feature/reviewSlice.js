@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/product-review";
+const API_URL = "https://gizmorent-server.vercel.app/product-review";
 
 // Fetch product reviews by productId
 export const fetchReviews = createAsyncThunk(

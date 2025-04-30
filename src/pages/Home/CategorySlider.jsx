@@ -34,11 +34,11 @@ const categories = [
   },
   {
     name: "Laptop",
-    img: "https://i.ibb.co/jv6t5FBN/Adobe-Express-file-9.png",
+    img: "https://i.ibb.co.com/Jj5MnhSb/Adobe-Express-file-18.png",
   },
   {
-    name: "Refrigarator",
-    img: "https://i.ibb.co/jv6t5FBN/Adobe-Express-file-9.png",
+    name: "Refrigerator",
+    img: "https://i.ibb.co.com/Fp5P9c7/srref-singer-sf-sbsns436v-1-removebg-preview.png",
   },
 ];
 

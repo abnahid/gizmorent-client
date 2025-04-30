@@ -4,13 +4,17 @@ import { FaPlus } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import Swal from "sweetalert";
 import useAdmin from "../../Hooks/useAdmin";
+<<<<<<< HEAD
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
-import useCategory from "../../Hooks/useCategory";
 import useRenter from "../../Hooks/useRenter";
 import useUser from "../../Hooks/useUser";
 import Header from "../../Shared/Header";
 import { uploadImage } from "../../utility/utility";
-
+import useUser from "../../Hooks/useUser";
+import useRenter from "../../Hooks/useRenter";
+import useAdmin from "../../Hooks/useAdmin";
+import useCategory from "../../Hooks/useCategory";
+import Header from "../../Shared/Header";
 const AddGadget = () => {
   const axiosPubic = useAxiosPublic();
   const [userData] = useUser();
@@ -93,15 +97,15 @@ const AddGadget = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="md:px-6 py-6">
       <Header
         header={"Add Gadget"}
         title={
-          "List a new gadget for rent and make it available to renters."
+          "Manage your listed gadgets and track their rental activity easily."
         }
-        icon={<FaPlus className="text-3xl" />}
+
       />
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 mt-4 overflow-x-auto rounded-lg border border-gray-300 shadow-sm bg-white p-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 mt-4">
         <input
           type="email"
           {...register("email", { required: "Email is required" })}

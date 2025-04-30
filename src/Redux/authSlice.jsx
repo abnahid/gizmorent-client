@@ -13,7 +13,7 @@ import { auth } from "../Firebase/firebase.config.js";
 
 const googleProvider = new GoogleAuthProvider();
 const axiosPublic = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://gizmorent-server.vercel.app'
 });
 
 // Helper function to transform Firebase user object to a serializable format

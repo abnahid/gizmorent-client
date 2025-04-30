@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 
 export const addToWishlist = createAsyncThunk("wishlist/addToWishlist", async ({ gadget, email }) => {
-  const response = await fetch("http://localhost:5000/wishlisted", {
+  const response = await fetch("https://gizmorent-server.vercel.app/wishlisted", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -27,14 +27,14 @@ export const addToWishlist = createAsyncThunk("wishlist/addToWishlist", async ({
 });
 
 export const fetchWishlist = createAsyncThunk("wishlist/fetchWishlist", async (email) => {
-  const response = await fetch(`http://localhost:5000/wishlisted?email=${email}`);
+  const response = await fetch(`https://gizmorent-server.vercel.app/wishlisted?email=${email}`);
   ;
   return await response.json();
 });
 
 // In wishlistSlice.js
 export const removeFromWishlist = createAsyncThunk("wishlist/removeFromWishlist", async (id) => {
-  const response = await fetch(`http://localhost:5000/wishlisted/${id}`, {
+  const response = await fetch(`https://gizmorent-server.vercel.app/wishlisted/${id}`, {
     method: "DELETE",
   });
 

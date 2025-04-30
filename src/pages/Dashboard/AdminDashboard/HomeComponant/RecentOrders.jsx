@@ -8,7 +8,7 @@ const RecentOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch("http://localhost:5000/recent-Order");
+        const response = await fetch("https://gizmorent-server.vercel.app/recent-Order");
         const data = await response.json();
         setOrders(data);
         setLoading(false);

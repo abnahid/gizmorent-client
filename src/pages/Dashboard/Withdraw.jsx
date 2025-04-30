@@ -56,7 +56,7 @@ const Withdraw = () => {
   const withdrawalAmount = watch("withdrawalAmount");
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white rounded-md shadow-md mt-14">
+    <div className="max-w-lg mx-auto md:p-6 rounded-md shadow-md mt-14">
       <h1 className="text-2xl font-bold mb-6 text-center">Withdraw</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

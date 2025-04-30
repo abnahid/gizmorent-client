@@ -72,7 +72,7 @@ export default function RentalEarning() {
     return <p className="p-4">No earnings data available.</p>;
 
   return (
-    <div className="p-6">
+    <div className="md:px-6 py-6">
 
       <Header
         header={"Rental Earnings"}

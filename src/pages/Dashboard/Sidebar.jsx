@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AiFillProduct, AiOutlineBars } from "react-icons/ai";
 import { BiMoneyWithdraw } from "react-icons/bi";
 import { BsFillHouseAddFill } from "react-icons/bs";
@@ -22,14 +22,32 @@ const Sidebar = () => {
   const [isAdmin] = useAdmin();
 
   const [isRenter] = useRenter();
+  const sidebarRef = useRef(null);
 
   const handleToggle = () => {
     setActive(!isActive);
   };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target) &&
+        isActive
+      ) {
+        setActive(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isActive]);
   return (
     <>
       {/* Small Screen Navbar */}
-      <div className="bg-gray-100 text-gray-800 fixed w-full  flex justify-between md:hidden">
+      <div className="bg-gray-100 text-gray-800 fixed w-full z-20  flex justify-between md:hidden">
         <div>
           <div className="block cursor-pointer p-4 font-bold">
             <Link to="/">
@@ -49,8 +67,9 @@ const Sidebar = () => {
       {/* bg-gradient-to-b from-sky-50 to-sky-100 */}
       {/* Sidebar */}
       <div
-        className={`z-10 fixed flex flex-col justify-between overflow-x-hidden bg-Primary text-white w-64 space-y-6 px-2 py-4  inset-y-0 left-0 transform ${isActive && "-translate-x-full"
-          }  md:translate-x-0  transition duration-200 ease-in-out`}
+        ref={sidebarRef}
+        className={`z-10 fixed flex flex-col justify-between overflow-x-hidden bg-Primary text-white w-64 space-y-6 px-2 py-4  inset-y-0 left-0 transform ${
+          isActive ? "translate-x-0" : "-translate-x-full"}  md:translate-x-0  transition duration-200 ease-in-out`}
       >
         <div>
           <div>

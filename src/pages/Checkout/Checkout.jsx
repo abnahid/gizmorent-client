@@ -120,28 +120,45 @@ const Checkout = () => {
         <div className="md:w-2/3">
           <div>
             <h3 className="text-xl font-semibold">Billing Details</h3>
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 mt-4">
-              <input
-                type="text"
-                defaultValue={bookingDetails?.name}
-                {...register("name", { required: "Name is required" })}
-                className="input w-full py-6"
-                placeholder="Name*"
-              />
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-2 mt-4">
+              <div>
+                <label htmlFor="name" className="block mb-1 font-semibold">
+                  {" "}
+                  Name
+                </label>
+                <input
+                  type="text"
+                  defaultValue={bookingDetails?.name}
+                  {...register("name", { required: "Name is required" })}
+                  className="input w-full py-6"
+                  placeholder="Name*"
+                />
+              </div>
               {errors.name && (
                 <p className="text-red-500">{errors.name.message}</p>
               )}
-
-              <input
-                type="number"
-                defaultValue={bookingDetails?.phone}
-                {...register("phone", { required: "Phone number is required" })}
-                className="input w-full py-6"
-                placeholder="Phone Number*"
-              />
+              <div>
+                <label htmlFor="phone" className="block mb-1 font-semibold">
+                  {" "}
+                  Phone Number{" "}
+                </label>
+                <input
+                  type="number"
+                  defaultValue={bookingDetails?.phone}
+                  {...register("phone", {
+                    required: "Phone number is required",
+                  })}
+                  className="input w-full py-6"
+                  placeholder="Phone Number*"
+                />
+              </div>
               {errors.phone && (
                 <p className="text-red-500">{errors.phone.message}</p>
               )}
+
+              <label htmlFor="email" className="block mb-1 font-semibold">
+                Email
+              </label>
 
               <input
                 type="email"
@@ -153,6 +170,10 @@ const Checkout = () => {
               {errors.email && (
                 <p className="text-red-500">{errors.email.message}</p>
               )}
+
+              <label htmlFor="pickupDate" className="block mb-1 font-semibold">
+                Pickup Date
+              </label>
               <input
                 type="date"
                 {...register("pickupDate", {
@@ -164,6 +185,10 @@ const Checkout = () => {
               {errors.pickupDate && (
                 <p className="text-red-500">{errors.pickupDate.message}</p>
               )}
+
+              <label htmlFor="dropDate" className="block mb-1 font-semibold">
+                Drop Date
+              </label>
               <input
                 type="date"
                 {...register("dropDate", { required: "Drop date is required" })}

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/gadgets";
+const API_URL = "https://gizmorent-server.vercel.app/gadgets";
 
 // Fetch all gadgets 
 export const fetchGadgets = createAsyncThunk(
@@ -9,7 +9,7 @@ export const fetchGadgets = createAsyncThunk(
   async ({ query = "", category = "", minPrice = 0, maxPrice = 999999, sortOption = "Default", page = 1 }) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/gadgets/search?query=${query}&category=${category}&minPrice=${minPrice}&maxPrice=${maxPrice}&sort=${sortOption}&page=${page}`
+        `https://gizmorent-server.vercel.app/gadgets/search?query=${query}&category=${category}&minPrice=${minPrice}&maxPrice=${maxPrice}&sort=${sortOption}&page=${page}`
       );
       return response.data; // Ensure that your API returns { gadgets, currentPage, totalPages }
     } catch (error) {

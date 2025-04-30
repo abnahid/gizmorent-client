@@ -4,7 +4,7 @@ export const addToCart = createAsyncThunk(
   "cart/addToCart",
   async ({ gadget, email, quantity }) => {
     try {
-      const response = await fetch("http://localhost:5000/cartlist", {
+      const response = await fetch("https://gizmorent-server.vercel.app/cartlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -37,7 +37,7 @@ export const addToCart = createAsyncThunk(
 
 // Fetch cart
 export const fetchCart = createAsyncThunk("cart/fetchCart", async (email) => {
-  const response = await fetch(`http://localhost:5000/cartlist?email=${email}`);
+  const response = await fetch(`https://gizmorent-server.vercel.app/cartlist?email=${email}`);
   const data = await response.json();
   return Array.isArray(data) ? data : [];
 });
@@ -46,7 +46,7 @@ export const fetchCart = createAsyncThunk("cart/fetchCart", async (email) => {
 export const removeFromCart = createAsyncThunk(
   "cart/removeFromCart",
   async (_id) => {
-    const response = await fetch(`http://localhost:5000/cartlist/${_id}`, {
+    const response = await fetch(`https://gizmorent-server.vercel.app/cartlist/${_id}`, {
       method: "DELETE",
     });
 
@@ -63,7 +63,7 @@ export const removeFromCart = createAsyncThunk(
 export const updateCartQuantity = createAsyncThunk(
   "cart/updateCartQuantity",
   async ({ _id, userEmail, quantity }) => {
-    const response = await fetch(`http://localhost:5000/cartlist/${_id}`, {
+    const response = await fetch(`https://gizmorent-server.vercel.app/cartlist/${_id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: userEmail, quantity }),

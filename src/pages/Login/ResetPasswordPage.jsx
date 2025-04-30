@@ -72,7 +72,7 @@ const ResetPasswordPage = () => {
             // Step 2: Update the password in your database
             const email = localStorage.getItem("resetUserEmail") || "fakeuser@example.com"; // Use fake email if none is stored
             if (email) {
-                const response = await fetch("http://localhost:5000/update-password", {
+                const response = await fetch("https://gizmorent-server.vercel.app/update-password", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

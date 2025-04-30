@@ -45,7 +45,7 @@ const HeroSection = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/renter_request",
+        "https://gizmorent-server.vercel.app/renter_request",
         formData
       );
       console.log(response.data);

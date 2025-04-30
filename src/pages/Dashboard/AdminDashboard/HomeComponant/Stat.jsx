@@ -22,7 +22,7 @@ const Stat = () => {
   useEffect(() => {
     const fetchGadgets = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/gadgets");
+        const res = await axios.get("https://gizmorent-server.vercel.app/gadgets");
         setGadgets(res.data);
       } catch (err) {
         console.error("Error fetching gadgets:", err);
@@ -34,7 +34,7 @@ const Stat = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/user");
+        const res = await axios.get("https://gizmorent-server.vercel.app/user");
         setUsers(res.data); // assuming your backend returns an array of users
       } catch (err) {
         console.error("Error fetching users:", err);
@@ -47,7 +47,7 @@ const Stat = () => {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/payments");
+        const res = await axios.get("https://gizmorent-server.vercel.app/payments");
         console.log('Fetched payments:', res.data);
         setAmount(res.data);
         const total = res.data.reduce((sum, payment) => sum + payment.amount, 0);

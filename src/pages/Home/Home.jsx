@@ -18,9 +18,9 @@ const Home = () => {
         <FilterBar />
         <CategorySlider></CategorySlider>
         <TopRented></TopRented>
-
+<RealTimeBooking></RealTimeBooking>
         <AboutGizmoRent></AboutGizmoRent>
-        <RealTimeBooking></RealTimeBooking>
+        
         <TopContributor></TopContributor>
         <Testimonial></Testimonial>
 

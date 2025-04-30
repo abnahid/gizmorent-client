@@ -67,7 +67,7 @@ const AllOrder = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div className="p-6">
+    <div className="md:px-6 py-6">
       <Header
         header={"All Orders"}
         title={

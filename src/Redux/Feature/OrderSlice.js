@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Fetch all renter orders
 export const fetchorders = createAsyncThunk("order/fetchAll", async () => {
-  const res = await axios.get("http://localhost:5000/orders");
+  const res = await axios.get("https://gizmorent-server.vercel.app/orders");
   console.log("Fetched orders:", res.data);
   return res.data.requests;
 });
@@ -17,7 +17,7 @@ export const updateOrderStatus = createAsyncThunk(
       updateData.returning_time = newReturningTime;
     }
     const res = await axios.patch(
-      `http://localhost:5000/orders/${orderId}`,
+      `https://gizmorent-server.vercel.app/orders/${orderId}`,
       updateData
     );
     return res.data;
@@ -28,7 +28,7 @@ export const fetchOrdersByEmail = createAsyncThunk(
   "order/fetchOrdersByEmail",
   async (email) => {
     const response = await axios.get(
-      `http://localhost:5000/orders/api?email=${email}`
+      `https://gizmorent-server.vercel.app/orders/api?email=${email}`
     );
     console.log("Fetched Orders:", response.data);
     return response.data || [];

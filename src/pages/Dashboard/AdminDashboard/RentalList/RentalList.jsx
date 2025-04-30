@@ -24,7 +24,7 @@ export default function RentalList() {
   if (renters.length === 0) return <p className="p-4">No renters found.</p>;
 
   return (
-    <div className="p-6">
+    <div className="md:px-6 py-6">
       <Header
         header={"All Renters"}
         title={

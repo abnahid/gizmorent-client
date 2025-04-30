@@ -13,8 +13,8 @@ const TopContributor = () => {
     const fetchData = async () => {
       try {
         const [ordersRes, usersRes] = await Promise.all([
-          axios.get("http://localhost:5000/orders"),
-          axios.get("http://localhost:5000/user"),
+          axios.get("https://gizmorent-server.vercel.app/orders"),
+          axios.get("https://gizmorent-server.vercel.app/user"),
         ]);
 
         setOrders(ordersRes.data.requests || []);
@@ -78,10 +78,14 @@ const TopContributor = () => {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-20">
+
+    <div className="">   
+     <h2 className=" md:text-4xl text-2xl font-bold">Top Contributor</h2>
+     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+     
       {/* Top Contributor Card */}
       {topContributor && (
-        <div className="h-full bg-white rounded-xl shadow-md p-6 flex flex-col justify-center items-center ">
+        <div className="h-full bg-white rounded-lg shadow-md p-6 flex flex-col justify-center items-center ">
           <div className="relative w-[120px] h-[120px] hover:scale-105">
             <div className="rounded-full border-4 border-Primary overflow-hidden shadow-md  transition-transform duration-300">
               <img
@@ -115,7 +119,7 @@ const TopContributor = () => {
       )}
 
       {/* Contribution Table */}
-      <div className="bg-white rounded-xl shadow-md overflow-hidden w-full">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden w-full">
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="bg-gray-200">
@@ -156,7 +160,10 @@ const TopContributor = () => {
           </tbody>
         </table>
       </div>
+    </div> 
     </div>
+    
+  
   );
 };
 

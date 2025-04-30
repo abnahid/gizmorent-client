@@ -22,7 +22,7 @@ const HomeAdmin = () => {
 
   return (
 
-    <div className='p-6 mt-4'>
+    <div className='md:px-6 py-6 mt-4'>
 
       {/* home hader */}
       <div

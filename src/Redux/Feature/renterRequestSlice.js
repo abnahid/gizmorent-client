@@ -5,7 +5,7 @@ import axios from 'axios';
 export const fetchRenterRequests = createAsyncThunk(
   'renterRequests/fetchAll',
   async () => {
-    const res = await axios.get('http://localhost:5000/renter_request');
+    const res = await axios.get('https://gizmorent-server.vercel.app/renter_request');
    
     return res.data.requests;
   }
@@ -16,7 +16,7 @@ export const fetchRenterRequests = createAsyncThunk(
 export const approveRenter = createAsyncThunk(
   'renterRequests/approve',
   async (email, { dispatch }) => {
-    const res = await axios.patch(`http://localhost:5000/approve_renter/${encodeURIComponent(email)}`);
+    const res = await axios.patch(`https://gizmorent-server.vercel.app/approve_renter/${encodeURIComponent(email)}`);
     
     console.log(res.data); // Log response data before returning
 
@@ -29,7 +29,7 @@ export const approveRenter = createAsyncThunk(
 export const rejectRenter = createAsyncThunk(
   'renterRequests/reject',
   async (email, { dispatch }) => {
-    const res = await axios.delete(`http://localhost:5000/reject_renter/${encodeURIComponent(email)}`);
+    const res = await axios.delete(`https://gizmorent-server.vercel.app/reject_renter/${encodeURIComponent(email)}`);
     
     console.log(res.data); 
 

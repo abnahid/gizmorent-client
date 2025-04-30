@@ -27,10 +27,10 @@ const Testimonial = () => {
     }, [axiosPublic]);
 
     return (
-        <section className="py-5 bg-white relative rounded-lg ">
-            <div className="container mx-auto px-5">
+        <section className="py-8 bg-white relative my-14 rounded-lg ">
+            <div className="container mx-auto px-10">
                 <div className="flex justify-between items-center mb-5">
-                    <h2 className="text-2xl font-bold text-Primary">
+                    <h2 className="text-xl font-bold text-Primary">
                         {reviews.length}+ Clients Love Exposure
                     </h2>
                 </div>
@@ -63,7 +63,7 @@ const Testimonial = () => {
                                 <img
                                     src={review.photo}
                                     alt={review.name}
-                                    className="rounded-lg w-[550px] h-[450px]  object-cover"
+                                    className="rounded-lg w-[350px] h-[250px]  object-cover"
                                 />
                                 {/* </div> */}
 
@@ -105,12 +105,12 @@ const Testimonial = () => {
                 </Swiper>
 
                 {/* Custom navigation buttons */}
-                <div className="absolute bottom-8 right-8 md:bottom-18 md:left-[600px]  flex z-20">
-                    <div ref={prevRef} className="bg-Primary hover:bg-Secondary p-3 rounded-full shadow-md cursor-pointer mr-4">
-                        <FaArrowLeft className="text-white text-xl" />
+                <div className="absolute bottom-7 right-8 md:bottom-11 md:left-[600px]  flex z-20">
+                    <div ref={prevRef} className="bg-Primary hover:bg-Secondary p-2 rounded-full shadow-md cursor-pointer mr-4">
+                        <FaArrowLeft className="text-white text-md" />
                     </div>
-                    <div ref={nextRef} className="bg-Primary hover:bg-Secondary p-3 rounded-full shadow-md cursor-pointer">
-                        <FaArrowRight className="text-white text-xl" />
+                    <div ref={nextRef} className="bg-Primary hover:bg-Secondary p-2 rounded-full shadow-md cursor-pointer">
+                        <FaArrowRight className="text-white text-md" />
                     </div>
                 </div>
             </div>

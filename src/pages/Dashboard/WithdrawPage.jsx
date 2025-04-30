@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import Header from "../../Shared/Header";
 
 const WithdrawPage = () => {
   const axiosPublic = useAxiosPublic();
@@ -44,14 +45,20 @@ const WithdrawPage = () => {
   };
 
   return (
-    <div className="bg-white py-12 lg:p-6 min-h-screen">
-      <h1 className="text-2xl font-bold mb-6 text-Primary">Withdraw History</h1>
+    <div className=" md:px-6 py-6 min-h-screen">
+     <Header
+             header={"Withdraw History"}
+             title={
+               "Streamline Withdrawals and Track Rental History"
+             }
+     
+           />
       {loading ? (
         <p>Loading withdraw...</p>
       ) : error ? (
-        <p className="text-red-500">{error}</p>
+        <p className=" text-red-500">{error}</p>
       ) : (
-        <div className="overflow-x-auto p-5 border border-base-300 rounded-2xl bg-base-100">
+        <div className="overflow-x-auto p-5 border border-base-300 rounded-2xl">
           <table className="table w-full">
             <thead>
               <tr>

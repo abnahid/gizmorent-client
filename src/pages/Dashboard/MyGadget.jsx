@@ -55,7 +55,7 @@ const MyGadget = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="md:px-6 py-6">
       <Header
         header={"My Gadget"}
         title={

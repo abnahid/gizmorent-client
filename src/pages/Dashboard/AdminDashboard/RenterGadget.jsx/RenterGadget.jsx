@@ -39,7 +39,7 @@ const RenterGadget = () => {
     });
   };
   return (
-    <div className="p-4">
+    <div className="md:px-6 py-6">
       <Header
         header={"Renter Gadget Approval"}
         title={

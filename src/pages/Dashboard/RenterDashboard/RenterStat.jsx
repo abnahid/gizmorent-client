@@ -80,7 +80,7 @@ const RenterStat = () => {
   }, [axiosPublic, userData]);
 
   return (
-    <div className="p-6">
+    <div className="md:px-6 py-6">
       <div
         className=" h-[300px] md:h-[350px] bg-cover bg-center  rounded-xl shadow-md overflow-hidden bg-white "
         style={{

@@ -158,7 +158,7 @@ export const router = createBrowserRouter([
         element: <UpdateGadget />,
         loader: async ({ params }) => {
           const response = await fetch(
-            `http://localhost:5000/gadgets/${params.id}`
+            `https://gizmorent-server.vercel.app/gadgets/${params.id}`
           );
           if (!response.ok) {
             throw new Error(`Gadget not found for ID: ${params.id}`);

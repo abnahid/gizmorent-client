@@ -67,7 +67,7 @@ const RenterApproval = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="md:px-6 py-6">
       <Header
         header={"Approve Renter"}
         title={

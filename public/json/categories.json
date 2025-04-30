@@ -151,12 +151,22 @@
   },
   {
     "id": 31,
-    "name": "Accesories",
+    "name": "Refrigerator",
     "image": "https://example.com/accessories.jpg"
   },
   {
     "id": 32,
+    "name": "Accesories",
+    "image": "https://example.com/accessories.jpg"
+  },
+  {
+    "id": 33,
     "name": "Other",
+    "image": "https://example.com/other.jpg"
+  },
+  {
+    "id": 34,
+    "name": "Best Deals",
     "image": "https://example.com/other.jpg"
   }
 ]

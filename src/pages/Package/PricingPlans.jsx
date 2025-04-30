@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { useNavigate } from "react-router";
 
 const plans = [
   {
@@ -46,10 +47,19 @@ const plans = [
   },
 ];
 
+
+
 const PricingPlans = () => {
+
+  const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
   const axiosPubic = useAxiosPublic();
   const handlePlan = async (plan) => {
+
+    if (!user) {
+      navigate("/login");
+      return;}
+
     const planDetails = {
       email: user.email,
       planName: plan.name,
